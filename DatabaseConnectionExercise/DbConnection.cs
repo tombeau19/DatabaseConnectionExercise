@@ -4,8 +4,8 @@ namespace DatabaseConnectionExercise
 {
     public abstract class DbConnection
     {
-        private string _connectionString;
-        private TimeSpan _timeout;
+        private readonly string _connectionString;
+        private readonly TimeSpan _timeout;
 
         public DbConnection(string connectionString)
         {
