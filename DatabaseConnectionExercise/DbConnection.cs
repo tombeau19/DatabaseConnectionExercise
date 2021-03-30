@@ -4,15 +4,15 @@ namespace DatabaseConnectionExercise
 {
     public abstract class DbConnection
     {
-        public string ConnectionString { get; set; }
-        public TimeSpan Timeout { get; set; }
+        private string _connectionString;
+        private TimeSpan _timeout;
 
         public DbConnection(string connectionString)
         {
             if(string.IsNullOrEmpty(connectionString))
                 throw new InvalidOperationException("must have valid connection string");
 
-            ConnectionString = connectionString;
+            _connectionString = connectionString;
         }
 
         public abstract void Open();
