@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Security.Cryptography.X509Certificates;
 
 namespace DatabaseConnectionExercise
 {
@@ -13,6 +13,12 @@ namespace DatabaseConnectionExercise
             var oracle = new OracleConnection("oracled connection string");
             oracle.Open();
             oracle.Close();
+
+            var sqlCommand = new DbCommand(sql,"execute a sql query");
+            sqlCommand.Execute();
+
+            var oracleComman = new DbCommand(oracle, "execute an oracle query");
+            oracleComman.Execute();
         }
     }
 }
