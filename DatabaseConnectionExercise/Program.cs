@@ -6,7 +6,13 @@ namespace DatabaseConnectionExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var sql = new SqlConnection("sql connection string");
+            sql.Open();
+            sql.Close();
+
+            var oracle = new OracleConnection("oracled connection string");
+            oracle.Open();
+            oracle.Close();
         }
     }
 }
